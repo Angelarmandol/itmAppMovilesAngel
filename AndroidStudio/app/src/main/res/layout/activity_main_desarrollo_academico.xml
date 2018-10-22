@@ -20,6 +20,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main_activity_desarrollo_academico"
-        app:menu="@menu/activity_main_desarrollo_academico_drawer" />
+        app:menu="@menu/activity_main_desarrollo_academico_drawer">
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
