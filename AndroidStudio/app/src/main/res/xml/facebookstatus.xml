@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:fragment="com.example.angel.myapplication.facebookInfo"
+        android:key="check_box_preference_1"
+        android:title="Check box preference" />
+
+
+    <Preference android:title="@string/pref_title_system_sync_settings">
+        <intent android:action="android.settings.SYNC_SETTINGS" />
+    </Preference>
+
+
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="check_box_preference_2"
+        android:title="Check box preference"
+
+
+        />
+
+
+
+
+</PreferenceScreen>

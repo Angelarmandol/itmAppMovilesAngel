@@ -52,40 +52,7 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        FacebookSdk.sdkInitialize(getApplicationContext());
 
-        callbackManager = CallbackManager.Factory.create();
-
-        setContentView(R.layout.activity_main_desarrollo_academico);
-        info = (TextView)findViewById(R.id.textViewFacebook);
-        loginButton = (LoginButton)findViewById(R.id.login_button);
-
-
-
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                info.setText(
-                        "User ID: "
-                                + loginResult.getAccessToken().getUserId()
-                                + "\n" +
-                                "Auth Token: "
-                                + loginResult.getAccessToken().getToken()
-
-
-                );
-            }
-
-            @Override
-            public void onCancel() {
-                info.setText("Login attempt canceled.");
-            }
-
-            @Override
-            public void onError(FacebookException e) {
-                info.setText("Login attempt failed.");
-            }
-        });
 
     }
 

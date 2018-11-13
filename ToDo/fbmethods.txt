@@ -1,0 +1,101 @@
+ <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TextViwNews"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+mainact  FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        setContentView(R.layout.content_main);
+        info = (TextView)findViewById(R.id.textViewFacebook);
+        loginButton = (LoginButton)findViewById(R.id.login_button);
+
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                info.setText(
+                        "User ID: "
+                                + loginResult.getAccessToken().getUserId()
+                                + "\n" +
+                                "Auth Token: "
+                                + loginResult.getAccessToken().getToken()
+
+
+                );
+            }
+
+            @Override
+            public void onCancel() {
+                info.setText("Login attempt canceled.");
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+                info.setText("Login attempt failed.");
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
+        callbackManager = CallbackManager.Factory.create();
+
+        setContentView(R.layout.activity_main_desarrollo_academico);
+        info = (TextView)findViewById(R.id.textViewFacebook);
+        loginButton = (LoginButton)findViewById(R.id.login_button);
+
+/*
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                info.setText(
+                        "User ID: "
+                                + loginResult.getAccessToken().getUserId()
+                                + "\n" +
+                                "Auth Token: "
+                                + loginResult.getAccessToken().getToken()
+
+
+                );
+            }
+
+
+            @Override
+            public void onCancel() {
+                info.setText("Login attempt canceled.");
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+                info.setText("Login attempt failed.");
+            }
+        });
+*/

@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <SwitchPreference
         android:defaultValue="true"
@@ -35,5 +36,6 @@
         android:entryValues="@array/colors"
         android:key="list_preference_1"
         android:title="List preference" />
+
 
 </PreferenceScreen>

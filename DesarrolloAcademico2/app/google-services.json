@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "571110585052",
+    "firebase_url": "https://dam2-b105a.firebaseio.com",
+    "project_id": "dam2-b105a",
+    "storage_bucket": "dam2-b105a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571110585052:android:b9c9bb5f33f1ee54",
+        "android_client_info": {
+          "package_name": "com.example.angel.desarrolloacademico2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571110585052-0baarb1po9v36pmnm22jj3i145gesovp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxiF7Xkg7mPf8vv1K2tbhzi8EpxOeb2dg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
