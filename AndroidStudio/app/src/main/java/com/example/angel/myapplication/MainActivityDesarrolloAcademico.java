@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
     private TextView info;
     private CallbackManager callbackManager;
     private LoginButton loginButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +41,10 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -69,6 +71,8 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
                                 + "\n" +
                                 "Auth Token: "
                                 + loginResult.getAccessToken().getToken()
+
+
                 );
             }
 
@@ -84,6 +88,7 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         });
 
     }
+
 
 
 
@@ -119,9 +124,17 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+/*
+            Intent settingsActivityIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(settingsActivityIntent);
+*/
             return true;
         }
-
+/*
+        Toast toast4 =
+                Toast.makeText(getApplicationContext(), "Activity Config", Toast.LENGTH_SHORT);
+        toast4.show();
+*/
         return super.onOptionsItemSelected(item);
     }
 
@@ -139,10 +152,19 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
                     Toast.makeText(getApplicationContext(), "Activity Config", Toast.LENGTH_SHORT);
             toast3.show();
 
+
+            Intent settingsActivityIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(settingsActivityIntent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState ){
+        super.onPostCreate(savedInstanceState);
     }
 }
