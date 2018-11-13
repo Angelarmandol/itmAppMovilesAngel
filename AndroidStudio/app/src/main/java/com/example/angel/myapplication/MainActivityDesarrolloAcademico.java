@@ -27,6 +27,9 @@ import com.facebook.login.widget.LoginButton;
 
 public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
+
+/// move to model
+
         implements NavigationView.OnNavigationItemSelectedListener {
     private WebView mWebview;
     private TextView info;
