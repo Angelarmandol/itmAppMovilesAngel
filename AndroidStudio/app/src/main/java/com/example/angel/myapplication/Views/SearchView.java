@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import com.example.angel.myapplication.Adaptadores.MateriaAdapter;
 import com.example.angel.myapplication.Models.Materia;
 import com.example.angel.myapplication.Models.Search;
 import com.example.angel.myapplication.Net.LocalTEST;
@@ -27,10 +28,8 @@ public class SearchView extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         localListview = (ListView) findViewById(R.id.rv_materias);
 
-
-
-
-                MateriaAdapter adapter = new RecipeAdapter(this, recipeList);
+        final ArrayList<Materia> materiaList = LocalTEST.setMateriasLocal();
+        MateriaAdapter adapter = new MateriaAdapter(this, materiaList);
         localListview.setAdapter(adapter);
 
     }

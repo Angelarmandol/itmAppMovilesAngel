@@ -13,7 +13,7 @@ public class LocalTEST {
 
 
 
-    public static ArrayList<Materia> setMateriasLocal(String filename, Context context){
+    public static ArrayList<Materia> setMateriasLocal(){
         final ArrayList<Materia> materiasaList = new ArrayList<>();
 
         try {
