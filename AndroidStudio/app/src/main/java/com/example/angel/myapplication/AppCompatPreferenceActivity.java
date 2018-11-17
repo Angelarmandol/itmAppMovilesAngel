@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 /**
  * A {@link android.preference.PreferenceActivity} which implements and proxies the necessary calls
@@ -25,6 +26,9 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
         getDelegate().installViewFactory();
         getDelegate().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
+        Toast toast2 =
+                Toast.makeText(getApplicationContext(), "Preferences activity ", Toast.LENGTH_SHORT);
+        toast2.show();
     }
 
     @Override

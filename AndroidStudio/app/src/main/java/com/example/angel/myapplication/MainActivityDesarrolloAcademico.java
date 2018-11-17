@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -125,6 +126,18 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
             Intent settingsActivityIntent = new Intent(getApplicationContext(), SettingsActivity.class);
             startActivity(settingsActivityIntent);
+
+        }
+
+        if (id == R.id.item_search) {
+
+            Toast toast4 =
+                    Toast.makeText(getApplicationContext(), "Activity Search", Toast.LENGTH_SHORT);
+            toast4.show();
+
+
+            Intent searchActivityIntent = new Intent(getApplicationContext(), SearchView.class);
+            startActivity(searchActivityIntent);
 
         }
 

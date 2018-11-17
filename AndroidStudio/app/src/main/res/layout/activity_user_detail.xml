@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserDetailView">
+    tools:context=".Views.UserDetailView">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -64,6 +64,7 @@
         tools:layout_editor_absoluteY="156dp" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_materias"
         android:layout_width="287dp"
         android:layout_height="96dp"
         tools:layout_editor_absoluteX="45dp"

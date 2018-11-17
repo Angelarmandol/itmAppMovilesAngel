@@ -1,7 +1,9 @@
-package com.example.angel.myapplication;
+package com.example.angel.myapplication.Views;
 // move to view
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.angel.myapplication.R;
 
 public class UserDetailView extends AppCompatActivity {
 
