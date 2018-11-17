@@ -3,5 +3,10 @@
 <color name="colorPrimary">#274bae</color>
 <color name="colorPrimaryDark">#c2ab16</color>
 <color name="colorAccent">#0022ff</color>
+
+    <color name="colorMateriaHigh">#ff0004</color>
+    <color name="colorMateriaLow">#00ff15</color>
+
+
 <string-array name="colors">colores</string-array>
 </resources>

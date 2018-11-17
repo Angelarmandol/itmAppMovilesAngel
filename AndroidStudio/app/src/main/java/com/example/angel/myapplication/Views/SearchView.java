@@ -2,6 +2,9 @@ package com.example.angel.myapplication.Views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.example.angel.myapplication.Models.Materia;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 
 public class SearchView extends AppCompatActivity {
 
+      LocalTEST test;
 
     ListView localListview= new Search().getSearchListView();
 
@@ -23,9 +27,11 @@ public class SearchView extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         localListview = (ListView) findViewById(R.id.rv_materias);
 
-        final ArrayList<Materia> materiaList = LocalTEST.getMaterias();
 
 
+
+                MateriaAdapter adapter = new RecipeAdapter(this, recipeList);
+        localListview.setAdapter(adapter);
 
     }
 }

@@ -1,8 +1,12 @@
 package com.example.angel.myapplication.Models;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+
 public class Materia {
 
-    private String nameMateria;
+    public String nameMateria;
 
     public String getNameMateria() {
         return nameMateria;
@@ -11,6 +15,7 @@ public class Materia {
     public void setNameMateria(String nameMateria) {
         this.nameMateria = nameMateria;
     }
+
 
 
 }
