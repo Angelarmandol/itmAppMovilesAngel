@@ -5,7 +5,7 @@ import android.widget.ListView;
 public class Search {
 
 
-
+    private ListView searchListView;
     public ListView getSearchListView() {
         return searchListView;
     }
@@ -14,7 +14,9 @@ public class Search {
         this.searchListView = searchListView;
     }
 
-    private ListView searchListView;
+
+
+
 
 
 }
