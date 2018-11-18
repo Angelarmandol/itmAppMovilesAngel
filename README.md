@@ -8,7 +8,7 @@
  - Introducción 
  - Justificación. 
  - Ventajas frente al sistema actual.
- - Mockups 
+ - Mockups.
  - Conclusión
 
 
