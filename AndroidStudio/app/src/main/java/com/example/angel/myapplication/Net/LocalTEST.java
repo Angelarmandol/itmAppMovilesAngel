@@ -25,6 +25,11 @@ public class LocalTEST {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference(FireBaseInstances.References);
 
+    ChatInteractor(ChatPresenter presenter) {
+        this.presenter = presenter;
+        retrieveCurrentChat();
+    }
+
 
     public void obtenerMaterias(){
 
