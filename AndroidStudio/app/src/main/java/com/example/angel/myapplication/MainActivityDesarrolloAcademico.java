@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.angel.myapplication.Models.Materia;
 import com.example.angel.myapplication.Net.FireBaseInstances;
+import com.example.angel.myapplication.Net.LocalTEST;
 import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -50,6 +51,7 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
     private CallbackManager callbackManager;
     private LoginButton loginButton;
 
+    LocalTEST test = new LocalTEST();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,41 +70,9 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(FireBaseInstances.References);
-
-
-
-
-final ArrayList<String> list_usuarios = new ArrayList<>();
-
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                Log.i("normal", "val: "+dataSnapshot.getValue());
-
-
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String users = snapshot.getValue(String.class);
-                    list_usuarios.add(users);
-
-                }
-
-Log.i("nombress:"," "+list_usuarios.toString());
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("Error", databaseError.getMessage());
-            }
-        });
-
-
-        Log.i("key", "materia----"+myRef.child("id_Materia").toString());
-        Log.i("key", "nombre----"+myRef.child("nombre").toString());
-
+        test.obtenerMaterias();
+        LocalTEST test= new LocalTEST();
+        test.obtenerMaterias();
 
     }
 

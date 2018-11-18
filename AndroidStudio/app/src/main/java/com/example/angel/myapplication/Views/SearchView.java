@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.example.angel.myapplication.Adaptadores.MateriaAdapter;
+import com.example.angel.myapplication.MainActivityDesarrolloAcademico;
 import com.example.angel.myapplication.Models.Materia;
 import com.example.angel.myapplication.Models.Search;
 import com.example.angel.myapplication.Net.LocalTEST;
@@ -36,7 +37,7 @@ public class SearchView extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-        localListview = new Search().getSearchListView(this, findViewById(android.R.id.content));
+        localListview = new Search().getSearchListView(this, findViewById(android.R.id.content ));
 
     }
 }
