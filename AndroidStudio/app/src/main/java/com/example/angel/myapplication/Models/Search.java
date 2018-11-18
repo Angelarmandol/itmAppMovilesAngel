@@ -19,9 +19,14 @@ public class Search {
         ButterKnife.bind(this, view);
         adaptador = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
         localListview.setAdapter(adaptador);
+
+        
+
         adaptador.add("hola");
         adaptador.add("mundo");
         adaptador.add("delagado");
+
+
         return localListview;
     }
 

@@ -35,6 +35,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivityDesarrolloAcademico extends AppCompatActivity
@@ -69,15 +71,26 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FireBaseInstances.References);
 
-        Materia nonono = new Materia("nombreTest3", "006");
 
-        myRef.push().setValue("Calculo Integral");
-        myRef.push().setValue("Calculo Diferencial");
+
+
+final ArrayList<String> list_usuarios = new ArrayList<>();
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 Log.i("normal", "val: "+dataSnapshot.getValue());
+
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String users = snapshot.getValue(String.class);
+                    list_usuarios.add(users);
+
+                }
+
+Log.i("nombress:"," "+list_usuarios.toString());
+
             }
 
             @Override
