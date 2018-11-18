@@ -37,7 +37,8 @@ public class SearchView extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-        localListview = new Search().getSearchListView(this, findViewById(android.R.id.content ));
+
+        localListview = new Search().getSearchListView(this, findViewById(android.R.id.content));
 
     }
 }

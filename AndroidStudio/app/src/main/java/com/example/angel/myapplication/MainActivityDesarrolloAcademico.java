@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.angel.myapplication.Models.Materia;
+import com.example.angel.myapplication.Models.MateriaInteractor;
+import com.example.angel.myapplication.Models.MateriaPresenter;
 import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.example.angel.myapplication.Net.LocalTEST;
 import com.example.angel.myapplication.Views.SearchView;
@@ -70,9 +72,8 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        test.obtenerMaterias();
-        LocalTEST test= new LocalTEST();
-        test.obtenerMaterias();
+        MateriaPresenter ps = new MateriaPresenter();
+        ps.obtenerMaterias();
 
     }
 
