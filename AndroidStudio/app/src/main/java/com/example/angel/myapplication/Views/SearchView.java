@@ -38,6 +38,5 @@ public class SearchView extends AppCompatActivity {
 
         localListview = new Search().getSearchListView(this, findViewById(android.R.id.content));
 
-
     }
 }

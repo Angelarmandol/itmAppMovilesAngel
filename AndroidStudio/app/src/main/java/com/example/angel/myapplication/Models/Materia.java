@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Materia {
 
     public String nameMateria;
-
+    public String id_Materia;
     public String getNameMateria() {
         return nameMateria;
     }
@@ -16,6 +16,9 @@ public class Materia {
         this.nameMateria = nameMateria;
     }
 
-
+public Materia(String nombre, String id){
+        this.id_Materia=id;
+        this.nameMateria=nombre;
+}
 
 }

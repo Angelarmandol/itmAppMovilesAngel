@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -25,6 +27,8 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
@@ -55,7 +59,10 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(FireBaseInstances.References);
 
+        Log.i("key", "-----: "+myRef.getKey());
 
 
     }
