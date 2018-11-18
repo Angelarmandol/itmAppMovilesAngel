@@ -23,7 +23,7 @@ public class MateriaInteractor {
             this.presenter = presenter;
             retrieveCurrentChat();
         }
-
+////
         private void retrieveCurrentChat() {
             chatElementReference.addValueEventListener(new ValueEventListener() {
                 @Override
