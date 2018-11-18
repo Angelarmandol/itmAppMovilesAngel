@@ -2,6 +2,7 @@ package com.example.angel.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.angel.myapplication.Models.Materia;
 import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
@@ -27,8 +29,13 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
@@ -62,7 +69,26 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(FireBaseInstances.References);
 
-        Log.i("key", "-----: "+myRef.getKey());
+        Materia nonono = new Materia("nombreTest3", "006");
+
+        myRef.push().setValue("Calculo Integral");
+        myRef.push().setValue("Calculo Diferencial");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                Log.i("normal", "val: "+dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("Error", databaseError.getMessage());
+            }
+        });
+
+
+        Log.i("key", "materia----"+myRef.child("id_Materia").toString());
+        Log.i("key", "nombre----"+myRef.child("nombre").toString());
 
 
     }
