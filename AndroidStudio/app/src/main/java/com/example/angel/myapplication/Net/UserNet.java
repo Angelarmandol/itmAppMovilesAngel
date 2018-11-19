@@ -77,15 +77,15 @@ public class UserNet {
                 Log.i("normal ase", "val: "+dataSnapshot.getValue());
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                    Log.i("mandar","snapshot");
-                    jSONParsin(snapshot);
+
                     list_Materias.put(snapshot,dataSnapshot.getValue());
                     localArrayList.add(dataSnapshot.getChildren());
                     //adaptador.add(users);
 
 
                 }
-
+                Log.i("mandar","snapshot");
+                jSONParsin(localArrayList);
                 Log.i("nombres as red:"," "+list_Materias.toString());
 
                 holder.setHolder(list_Materias.toString());
@@ -123,23 +123,22 @@ public class UserNet {
 
 String text;
 
-    public void jSONParsin(DataSnapshot result){
+    public void jSONParsin(ArrayList result){
 
 
-        HashMap test = new HashMap();
-        test.put(0, result);
 
+        Log.i("valor", ""+result);
 
-        System.out.println("****** principal thread"+result);
-        this.text=test.get(0).toString();
+        System.out.println("****** principal thread"+result.toString());
 
-        // String jsonStr = loadJsonFromAsset("forecast.json", this);
+        System.out.println("****** secondary thread"+result);
+
         JSONObject json = null;
-        try {
-            json = new JSONObject(result.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
+        String hola = result.toString();
+
+        json.put(hola,2);
+
         JSONArray lista = null;
         try {
             lista = json.getJSONArray("568749");
