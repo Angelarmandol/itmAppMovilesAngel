@@ -47,7 +47,8 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".Views.facebookAvt" />
         <activity android:name=".Views.UserDetailView" />
-        <activity android:name=".Views.SearchView"></activity>
+        <activity android:name=".Views.SearchView" />
+        <activity android:name=".Views.AseoresView"></activity>
     </application>
 
 </manifest>

@@ -9,9 +9,29 @@ public class UserDetail {
     private String fbUserName;
     private  String tv_telephone;
 
+
+    private String link;
+
     private ListView lv_materias;
 
     int score;
+/*
+    public UserDetail(String name, String telephone, String email, String areaResources, String url, int score) {
+        this.fbUserName=name;
+        this.tv_telephone=telephone;
+        this.tv_email=email;
+        this.area_resources=areaResources;
+        this.link=url;
+        this.score=score;
+    }
+*/
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public String getFbUserName() {
         return fbUserName;

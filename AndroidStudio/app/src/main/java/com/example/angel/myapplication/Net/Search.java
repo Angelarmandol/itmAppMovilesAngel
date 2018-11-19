@@ -1,4 +1,4 @@
-package com.example.angel.myapplication.Models;
+package com.example.angel.myapplication.Net;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

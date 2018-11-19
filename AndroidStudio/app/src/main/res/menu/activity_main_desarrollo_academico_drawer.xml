@@ -14,7 +14,10 @@
         <menu>
             <item
                 android:id="@+id/item_search"
-                android:title="Buscar" />
+                android:title="Materias" />
+            <item
+                android:id="@+id/item_asesores"
+                android:title="Asesores" />
             <item
                 android:id="@+id/idIssue"
                 android:title="Reportar un problema" />

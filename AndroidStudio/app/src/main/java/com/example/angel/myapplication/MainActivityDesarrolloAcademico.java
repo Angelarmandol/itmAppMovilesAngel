@@ -25,6 +25,8 @@ import com.example.angel.myapplication.Models.MateriaInteractor;
 import com.example.angel.myapplication.Models.MateriaPresenter;
 import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.example.angel.myapplication.Net.LocalTEST;
+import com.example.angel.myapplication.Net.UserNet;
+import com.example.angel.myapplication.Views.AseoresView;
 import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -74,6 +76,9 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
         MateriaPresenter ps = new MateriaPresenter();
         ps.obtenerMaterias();
+
+        UserNet un = new UserNet();
+
 
     }
 
@@ -154,6 +159,18 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
 
             Intent searchActivityIntent = new Intent(getApplicationContext(), SearchView.class);
+            startActivity(searchActivityIntent);
+
+        }
+
+        if (id == R.id.item_asesores) {
+
+            Toast toast4 =
+                    Toast.makeText(getApplicationContext(), "Activity Search", Toast.LENGTH_SHORT);
+            toast4.show();
+
+
+            Intent searchActivityIntent = new Intent(getApplicationContext(), AseoresView.class);
             startActivity(searchActivityIntent);
 
         }

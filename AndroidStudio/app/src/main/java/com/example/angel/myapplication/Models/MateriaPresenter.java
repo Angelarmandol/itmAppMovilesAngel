@@ -16,18 +16,7 @@ import java.util.ArrayList;
 public class MateriaPresenter {
 
 
-
-
-
     public void obtenerMaterias(){
-
-
-
-
-
-
-
-
 
     }
 
