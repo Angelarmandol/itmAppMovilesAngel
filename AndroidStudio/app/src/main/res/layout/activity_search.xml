@@ -6,31 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Views.SearchView">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="84dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ListView
         android:id="@+id/lv_materias"
-        android:layout_width="318dp"
-        android:layout_height="430dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        android:layout_width="333dp"
+        android:layout_height="449dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/tv_materias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Materias"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>

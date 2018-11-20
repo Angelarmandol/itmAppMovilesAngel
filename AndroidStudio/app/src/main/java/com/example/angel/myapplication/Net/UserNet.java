@@ -78,6 +78,7 @@ public class UserNet {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.i("normal ase", "val: "+dataSnapshot.getValue());
+
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
 
@@ -85,7 +86,7 @@ public class UserNet {
                     localArrayList.add(dataSnapshot.getChildren());
                     test2.put(snapshot, dataSnapshot);
                    //adaptador.add(test2.toString());
-                    adaptador.add("----");
+
 
 
                 }
@@ -179,6 +180,7 @@ String text;
             name=name[1].split(", ");
             System.out.println("valor de name:"+name[0]);
             datos.add(4,name[0]);
+            adaptador.add(name[0]);
             ////////////////////////////
             String[] link = users[x].split("link=");
             link=link[1].split(", ");
@@ -200,12 +202,12 @@ String text;
 
         System.out.println("For de detailusers");
         System.out.println(detailUsers);
-            for(int v=0; v<detailUsers.size();v++){
-                System.out.println(".-.-.-..-"+v);
+            for(int v=0; v<detailUsers.size();v++)
+        {
+            System.out.println(".-.-.-..-"+v);
 
 
         }
-
 
 
     }

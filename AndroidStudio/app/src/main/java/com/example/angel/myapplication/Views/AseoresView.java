@@ -1,12 +1,16 @@
 package com.example.angel.myapplication.Views;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.Net.UserNet;
 import com.example.angel.myapplication.R;
 
@@ -16,7 +20,7 @@ import butterknife.OnClick;
 
 public class AseoresView extends AppCompatActivity {
 
-    @BindView(R.id.subirAsesor) Button subir;
+
     @BindView(R.id.lv_asesores)
     ListView localListview;
     @Override
@@ -29,14 +33,22 @@ public class AseoresView extends AppCompatActivity {
         Log.i("o0o0o0o0o","start");
         localListview = new UserNet().getSearchListView(this, findViewById(android.R.id.content));
 
+
+        ///handler
+        final Context context = this;
+        localListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("se preciono", "uno");
+                Intent detailIntent = new Intent(context, UserDetailView.class);
+                startActivity(detailIntent);
+            }
+        });
+
+
+
     }
 
-    @OnClick(R.id.subirAsesor)
-    public void submit(View view) {
 
-        Log.i("Subiendo..","");
-
-        UserNet net = new UserNet();
-        net.subir();
-    }
 }

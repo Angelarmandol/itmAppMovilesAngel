@@ -8,27 +8,26 @@
 
     <ListView
         android:id="@+id/lv_asesores"
-        android:layout_width="364dp"
-        android:layout_height="276dp"
+        android:layout_width="366dp"
+        android:layout_height="419dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="144dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/subirAsesor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="41dp"
-        android:text="Button"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lv_asesores" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
+
+    <TextView
+        android:id="@+id/tv_Lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Lista de Asesores"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
