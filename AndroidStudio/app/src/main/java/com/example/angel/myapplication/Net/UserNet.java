@@ -1,5 +1,6 @@
 package com.example.angel.myapplication.Net;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -22,6 +23,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,6 +59,7 @@ public class UserNet {
     @BindView(R.id.lv_asesores) ListView localListview;
     ArrayList localArrayList = new ArrayList();
 
+    HashMap test2 = new HashMap();
 
     final HashMap list_Materias = new HashMap();
 
@@ -72,6 +75,8 @@ public class UserNet {
         myRef.addValueEventListener(new ValueEventListener() {
 
 
+
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.i("normal ase", "val: "+dataSnapshot.getValue());
@@ -80,18 +85,20 @@ public class UserNet {
 
                     list_Materias.put(snapshot,dataSnapshot.getValue());
                     localArrayList.add(dataSnapshot.getChildren());
-                    //adaptador.add(users);
+                    test2.put(snapshot, dataSnapshot);
+                    adaptador.add(dataSnapshot.toString());
 
 
                 }
+
                 Log.i("mandar","snapshot");
-                jSONParsin(localArrayList);
-                Log.i("nombres as red:"," "+list_Materias.toString());
+                jSONParsin(test2);
+                //Log.i("nombres as red:"," "+list_Materias.toString());
 
                 holder.setHolder(list_Materias.toString());
                 //holder.setHolderArray(list_Materias);
-                Log.i("holder ase vale: ",""+holder.getHolder());
-                Log.i("holder ase  ",""+holder.getHolderArray());
+                //Log.i("holder ase vale: ",""+holder.getHolder());
+                //Log.i("holder ase  ",""+holder.getHolderArray());
 
 
             }
@@ -123,21 +130,61 @@ public class UserNet {
 
 String text;
 
-    public void jSONParsin(ArrayList result){
+    public void jSONParsin(HashMap test){
 
+        ArrayList<UserDetail> detailUsers= new ArrayList<UserDetail>();
+        ArrayList<String>datos = new ArrayList<String>();
+        String conv = test.toString();
+        String[] fff = conv.split("val: ");
 
+        System.out.println("33333333333333");
+        System.out.println("Longitud de array"+fff.length);
+        //System.out.println(fff[0]);
+        System.out.println("------");
+        String source = fff[0];
+        String[] users = source.split("DataSnapshot");
+/////del 1 en adelante
+        System.out.println("1"+users[1]);
 
-        Log.i("valor", ""+result);
+        System.out.println("Empieza separaciono0o0o0o0ooo00ooo0o");
 
-        System.out.println("****** principal thread"+result.toString());
+        for(int x=1; x<24; x++){
 
-        System.out.println("****** secondary thread"+result);
+        String id = users[x].substring(9);
+        String[] id2 = id.split(", ");
+        System.out.println("id2:"+id2[0]);
+        datos.add(0, id2[0]);
+        /////////////////////////////
+        String[] telefono = users[x].split("tv_telephone=");
+        telefono=telefono[1].split(", ");
+        System.out.println("valor de thelepohe:"+telefono[0]);
+        /////////////////////////////
+        String[] score = users[x].split("score=");
+        score=score[1].split(", ");
+        System.out.println("valor de score:"+score[0]);
+        ////////////////////////////
+        String[] area = users[x].split("area_resources=");
+        area=area[1].split(", ");
+        System.out.println("valor de area:"+area[0]);
+        ////////////////////////////
+        String[] name = users[x].split("fbUserName=");
+        name=name[1].split(", ");
+        System.out.println("valor de name:"+name[0]);
+        ////////////////////////////
+        String[] link = users[x].split("link=");
+        link=link[1].split(", ");
+        System.out.println("valor de link:"+link[0]);
+        ////////////////////////////
+        String[] tv_email = users[x].split("tv_email=");
+        tv_email=tv_email[1].split(", ");
+        System.out.println("valor de tv_email:"+tv_email[0]);
 
-        JSONObject json = null;
+        System.out.println("..............................................................");
+x++;
 
-        String hola = result.toString();
+        }
 
-        json.put(hola,2);
+/*
 
         JSONArray lista = null;
         try {
@@ -170,12 +217,12 @@ String text;
                 conditions.pressure = phone.getString("pressure")+" bar";
                 JSONObject ws = c.getJSONObject("wind");
                 conditions.windSpeed =ws.getString("speed");
-                */
+
 
 
         }
 
-
+ */
 
     }
 
