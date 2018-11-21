@@ -34,7 +34,15 @@ public class UserNet {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference(FireBaseInstances.ReferenceAlumno);
 
+    public ArrayList<ArrayList> getDetailUsers() {
+        return detailUsers;
+    }
 
+    public void setDetailUsers(ArrayList<ArrayList> detailUsers) {
+        this.detailUsers = detailUsers;
+    }
+
+    ArrayList<ArrayList> detailUsers= new ArrayList<ArrayList>();
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("alumno");
 
     public void subir(){
@@ -136,7 +144,7 @@ String text;
 
     public void jSONParsin(HashMap test){
 
-        ArrayList<ArrayList> detailUsers= new ArrayList<ArrayList>();
+
         ArrayList<String>datos = new ArrayList<String>();
 
 

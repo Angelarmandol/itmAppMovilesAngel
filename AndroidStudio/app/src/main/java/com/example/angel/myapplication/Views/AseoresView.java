@@ -14,12 +14,14 @@ import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.Net.UserNet;
 import com.example.angel.myapplication.R;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AseoresView extends AppCompatActivity {
-
+    UserNet jk = new UserNet();
 
     @BindView(R.id.lv_asesores)
     ListView localListview;
@@ -31,7 +33,7 @@ public class AseoresView extends AppCompatActivity {
 
 
         Log.i("o0o0o0o0o","start");
-        localListview = new UserNet().getSearchListView(this, findViewById(android.R.id.content));
+        localListview =  jk.getSearchListView(this, findViewById(android.R.id.content));
 
 
         ///handler
@@ -40,7 +42,12 @@ public class AseoresView extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
                 Log.i("se preciono", "uno");
+                System.out.println("numero lista 000000"+localListview.getSelectedItemPosition());
+                System.out.println("size es -----:"+jk.getDetailUsers().size());
                 Intent detailIntent = new Intent(context, UserDetailView.class);
                 startActivity(detailIntent);
             }
