@@ -94,7 +94,7 @@ public class UserNet {
                     localArrayList.add(dataSnapshot.getChildren());
                     test2.put(snapshot, dataSnapshot);
                    //adaptador.add(test2.toString());
-
+//this adapter
 
 
                 }
