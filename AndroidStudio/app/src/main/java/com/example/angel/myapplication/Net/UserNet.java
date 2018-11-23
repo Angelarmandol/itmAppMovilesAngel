@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.R;
+import com.example.angel.myapplication.Views.FirebaseHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,8 +32,6 @@ import butterknife.ButterKnife;
 public class UserNet {
 
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference(FireBaseInstances.ReferenceAlumno);
 
     public ArrayList<ArrayList> getDetailUsers() {
         return detailUsers;
@@ -71,16 +70,17 @@ public class UserNet {
 
     final HashMap list_Materias = new HashMap();
 
+    FirebaseHolder myRef = new FirebaseHolder();
 
     public ListView getSearchListView(Context context, View view) {
 
-        Log.i("o0o0o0o0o","es"+database.getReference());
+        Log.i("o0o0o0o0o","es"+myRef.getDatabase().getReference());
 
         ButterKnife.bind(this, view);
         adaptador = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
         localListview.setAdapter(adaptador);
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.getMyRef().addValueEventListener(new ValueEventListener() {
 
 
             @Override
