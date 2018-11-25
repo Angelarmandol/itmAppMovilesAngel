@@ -27,7 +27,7 @@ public class UserDetailView extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         ImageView iv_asesor = (ImageView) this.findViewById(R.id.iv_asesor);
-        TextView tv_UserName = (TextView) this.findViewById(R.id.tv_name);
+        TextView tv_UserName = (TextView) this.findViewById(R.id.tv_UserName);
         TextView tv_phone = (TextView) this.findViewById(R.id.tv_phone);
         TextView tv_email = (TextView) this.findViewById(R.id.tv_email);
         TextView tv_resources = (TextView) this.findViewById(R.id.tv_resources);
@@ -42,10 +42,10 @@ public class UserDetailView extends AppCompatActivity {
         System.out.println("nombre email:"+extras.get("email").toString());
         tv_resources.setText(extras.get("resources").toString());
         System.out.println("nombre resources: "+extras.get("resources").toString());
-
-//        tv_UserName.setText(extras.get("name").toString());
-       // System.out.println("nombre extra:"+extras.get("name").toString());
+        tv_UserName.setText(extras.get("name").toString());
+        System.out.println("nombre extra:"+extras.get("name").toString());
         Picasso.get().load(extras.get("photo").toString()).into(iv_asesor);
+
 
     }
 

@@ -52,7 +52,7 @@ public class AseoresView extends AppCompatActivity {
                 System.out.println(extras.size());
                 //iteracion de 7
 
-                System.out.println("nombre 0 es:"+extras.get(4));
+
                 Long pos= jk.getDetailUsers().size()-id;
                 position= Integer.parseInt(pos.toString());
                 position = position-1;
@@ -68,8 +68,6 @@ public class AseoresView extends AppCompatActivity {
                 //System.out.println("0o0o0o0recursos  es:"+extras.get((7*position)+3));
                 detailIntent.putExtra("resources",extras.get((7*position)+3));
                 //System.out.println("0o0o0o0nombre  es:"+extras.get((7*position)+4));
-                detailIntent.putExtra("name",extras.get((7*position)+4));
-                detailIntent.putExtra(extras.get((7*position)+4), "name");
 
                 //System.out.println("0o0o0o0foto  es:"+extras.get((7*position)+5));
                 detailIntent.putExtra("photo",extras.get((7*position)+5));
@@ -86,7 +84,9 @@ public class AseoresView extends AppCompatActivity {
                 }
 
 */
-                detailIntent.putExtra("abc","abcd");
+                System.out.println("nombre  es:"+extras.get((7*position)+4));
+                detailIntent.putExtra("name",extras.get((7*position)+4));
+                detailIntent.putExtra("abc","abc");
                 startActivity(detailIntent);
 
             }
