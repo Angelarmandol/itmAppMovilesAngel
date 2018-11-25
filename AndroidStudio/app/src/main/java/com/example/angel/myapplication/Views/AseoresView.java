@@ -14,6 +14,7 @@ import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.Net.UserNet;
 import com.example.angel.myapplication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -36,10 +37,6 @@ public class AseoresView extends AppCompatActivity {
         localListview =  jk.getSearchListView(this, findViewById(android.R.id.content));
 
         final Context context = this;
-         
-
-
-        ///handler
 
         localListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -47,15 +44,34 @@ public class AseoresView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-
-                Log.i("se preciono", "uno");
-                System.out.println("numero lista 000000"+localListview.getSelectedItemPosition());
-                System.out.println("size es -----:"+jk.getDetailUsers().size());
                 Intent detailIntent = new Intent(context, UserDetailView.class);
                 startActivity(detailIntent);
+
+
+                ArrayList<String> extras = jk.getDetailUsers().get(0);
+                System.out.println(extras.size());
+                //iteracion de 7
+
+                System.out.println("nombre 0 es:"+extras.get(4));
+                Long pos= jk.getDetailUsers().size()-id;
+                position= Integer.parseInt(pos.toString());
+
+                System.out.println("position "+position);
+                System.out.println("indes es: "+(7*position)+4);
+                System.out.println("0o0o0o0nombre  es:"+extras.get((7*position)+4));
+
+                
+                for(int x=0; x<extras.size(); x++){
+                    System.out.println("nombre "+x+" es:"+extras.get(x));
+                }
+
+                for(int x=0; x<jk.getDetailUsers().size(); x++){
+                    System.out.println("///nombre  es:"+extras.get((7*x)+4));
+                }
+
+
             }
         });
-
 
 
     }

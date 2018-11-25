@@ -3,12 +3,14 @@ package com.example.angel.myapplication.Views;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.angel.myapplication.Net.UserNet;
 import com.example.angel.myapplication.R;
+
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
 public class UserDetailView extends AppCompatActivity {
-
 
 
 
