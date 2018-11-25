@@ -3,6 +3,7 @@ package com.example.angel.myapplication.Views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,6 +47,31 @@ public class UserDetailView extends AppCompatActivity {
         System.out.println("nombre extra:"+extras.get("name").toString());
         Picasso.get().load(extras.get("photo").toString()).into(iv_asesor);
 
+
+        int score=Integer.parseInt(extras.get("score").toString());
+        ImageView s1 = (ImageView) this.findViewById(R.id.s1);
+        ImageView s2 = (ImageView) this.findViewById(R.id.s2);
+        ImageView s3 = (ImageView) this.findViewById(R.id.s3);
+        ImageView s4= (ImageView) this.findViewById(R.id.s4);
+        ImageView s5 = (ImageView) this.findViewById(R.id.s5);
+
+
+        if(score>=1){
+            s1.setVisibility(View.VISIBLE);
+        }
+
+        if(score>=2){
+            s2.setVisibility(View.VISIBLE);
+        }
+        if(score>=3){
+            s3.setVisibility(View.VISIBLE);
+        }
+        if(score>=4){
+            s4.setVisibility(View.VISIBLE);
+        }
+        if(score>=5){
+            s5.setVisibility(View.VISIBLE);
+        }
 
     }
 
