@@ -45,7 +45,7 @@ public class AseoresView extends AppCompatActivity {
 
 
                 Intent detailIntent = new Intent(context, UserDetailView.class);
-                startActivity(detailIntent);
+
 
 
                 ArrayList<String> extras = jk.getDetailUsers().get(0);
@@ -59,14 +59,24 @@ public class AseoresView extends AppCompatActivity {
 
                 System.out.println("position "+position);
                 System.out.println("indes es: "+((7*position)+4));
-                System.out.println("0o0o0o0id  es:"+extras.get((7*position)+0));
-                System.out.println("0o0o0o0telefono  es:"+extras.get((7*position)+1));
-                System.out.println("0o0o0o0estrellas  es:"+extras.get((7*position)+2));
-                System.out.println("0o0o0o0recursos  es:"+extras.get((7*position)+3));
-                System.out.println("0o0o0o0nombre  es:"+extras.get((7*position)+4));
-                System.out.println("0o0o0o0foto  es:"+extras.get((7*position)+5));
-                System.out.println("0o0o0o0email  es:"+extras.get((7*position)+6));
+                //System.out.println("0o0o0o0id  es:"+extras.get((7*position)+0));
+                detailIntent.putExtra("id",extras.get((7*position)+0));
+                //System.out.println("0o0o0o0telefono  es:"+extras.get((7*position)+1));
+                detailIntent.putExtra("phone",extras.get((7*position)+1));
+                //System.out.println("0o0o0o0estrellas  es:"+extras.get((7*position)+2));
+                detailIntent.putExtra("score",extras.get((7*position)+2));
+                //System.out.println("0o0o0o0recursos  es:"+extras.get((7*position)+3));
+                detailIntent.putExtra("resources",extras.get((7*position)+3));
+                //System.out.println("0o0o0o0nombre  es:"+extras.get((7*position)+4));
+                detailIntent.putExtra("name",extras.get((7*position)+4));
+                detailIntent.putExtra(extras.get((7*position)+4), "name");
 
+                //System.out.println("0o0o0o0foto  es:"+extras.get((7*position)+5));
+                detailIntent.putExtra("photo",extras.get((7*position)+5));
+               // System.out.println("0o0o0o0email  es:"+extras.get((7*position)+6));
+                detailIntent.putExtra("email",extras.get((7*position)+6));
+
+                /*
                 for(int x=0; x<extras.size(); x++){
                     System.out.println("nombre "+x+" es:"+extras.get(x));
                 }
@@ -75,6 +85,9 @@ public class AseoresView extends AppCompatActivity {
                     System.out.println("///nombre  es:"+extras.get((7*x)+4));
                 }
 
+*/
+                detailIntent.putExtra("abc","abcd");
+                startActivity(detailIntent);
 
             }
         });
