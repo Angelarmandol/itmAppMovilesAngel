@@ -154,7 +154,7 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         if (id == R.id.item_search) {
 
             Toast toast4 =
-                    Toast.makeText(getApplicationContext(), "Activity Search", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "Activity MateriaPresenter", Toast.LENGTH_SHORT);
             toast4.show();
 
 
@@ -166,7 +166,7 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         if (id == R.id.item_asesores) {
 
             Toast toast4 =
-                    Toast.makeText(getApplicationContext(), "Activity Search", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "Activity MateriaPresenter", Toast.LENGTH_SHORT);
             toast4.show();
 
 

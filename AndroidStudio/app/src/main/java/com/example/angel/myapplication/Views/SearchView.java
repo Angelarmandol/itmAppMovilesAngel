@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.angel.myapplication.Net.Search;
+import com.example.angel.myapplication.Net.MateriaPresenter;
 import com.example.angel.myapplication.Net.LocalTEST;
 import com.example.angel.myapplication.R;
 
@@ -16,7 +16,7 @@ public class SearchView extends AppCompatActivity {
 
       LocalTEST test;
       ArrayAdapter<String> adaptador;
-      Search test2 = new Search();
+      MateriaPresenter test2 = new MateriaPresenter();
 
     @BindView(R.id.lv_materias) ListView localListview;
 
@@ -27,7 +27,7 @@ public class SearchView extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        localListview = new Search().getSearchListView(this, findViewById(android.R.id.content));
+        localListview = new MateriaPresenter().getSearchListView(this, findViewById(android.R.id.content));
 
     }
 }

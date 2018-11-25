@@ -1,6 +1,5 @@
 package com.example.angel.myapplication.Net;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -8,23 +7,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.R;
-import com.example.angel.myapplication.Views.FirebaseHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,7 +71,7 @@ public class UserNet {
         adaptador = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
         localListview.setAdapter(adaptador);
 
-        myRef.getMyRef().addValueEventListener(new ValueEventListener() {
+        myRef.getAsesor().addValueEventListener(new ValueEventListener() {
 
 
             @Override

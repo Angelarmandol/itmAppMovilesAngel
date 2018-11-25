@@ -35,9 +35,12 @@ public class AseoresView extends AppCompatActivity {
         Log.i("o0o0o0o0o","start");
         localListview =  jk.getSearchListView(this, findViewById(android.R.id.content));
 
+        final Context context = this;
+         
+
 
         ///handler
-        final Context context = this;
+
         localListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

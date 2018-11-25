@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Search {
+public class MateriaPresenter {
 
     public ArrayAdapter<String> getAdaptador() {
         return adaptador;
@@ -37,8 +37,9 @@ public class Search {
     @BindView(R.id.lv_materias) ListView localListview;
     ArrayList localArrayList = new ArrayList();
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference(FireBaseInstances.References);
+
+    FirebaseHolder instancia = new FirebaseHolder();
+
     final ArrayList<String> list_Materias = new ArrayList<>();
 
 
@@ -48,7 +49,7 @@ public class Search {
         adaptador = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
         localListview.setAdapter(adaptador);
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        instancia.getMateria().addValueEventListener(new ValueEventListener() {
 
 
             @Override
