@@ -11,6 +11,7 @@ import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -102,6 +103,7 @@ public class UserNet {
             //System.out.println("id2:"+id2[0]);
             data.add(0,id2[0]);
             /////////////////////////////
+                System.out.println("+++++++++++++++++++++"+users[x]);
             String[] telefono = users[x].split("tv_telephone=");
             telefono=telefono[1].split(", ");
             //System.out.println("valor de thelepohe:"+telefono[0]);
@@ -148,17 +150,18 @@ public class UserNet {
 
     public void setAviable(){
 
+
         UserDetail user = new UserDetail("Test", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5, true);
 
-        myRef.getAsesor().child("ki87654d").setValue(user);
+        myRef.getDbRef().child("ki87654d").setValue(user);
 
     }
 
     public void setUnaviable(){
 
-        UserDetail user = new UserDetail("Test", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5, false);
+        UserDetail user2 = new UserDetail("Test", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5, false);
 
-        myRef.getAsesor().child("ki87654d").setValue(user);
+        myRef.getDbRef().child("ki87654d").setValue(user2);;
 
     }
 

@@ -71,7 +71,7 @@ public class FacebookLoginView extends AppCompatActivity {
                         toast4.show();
                         sw.setVisibility(View.VISIBLE);
                         setIdFacebook(tok.getUserId());
-                        setDisponible();
+
 
                     }
                     @Override

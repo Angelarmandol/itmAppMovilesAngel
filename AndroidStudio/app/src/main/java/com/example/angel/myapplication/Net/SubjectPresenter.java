@@ -17,34 +17,34 @@ import butterknife.ButterKnife;
 
 public class SubjectPresenter {
 
-    public ArrayAdapter<String> getAdaptador() {
-        return adaptador;
+    public ArrayAdapter<String> getAdaptor() {
+        return adaptor;
     }
 
-    public void setAdaptador(ArrayAdapter<String> adaptador) {
-        this.adaptador = adaptador;
+    public void setAdaptor(ArrayAdapter<String> adaptor) {
+        this.adaptor = adaptor;
     }
-    ArrayAdapter<String> adaptador;
+    ArrayAdapter<String> adaptor;
     @BindView(R.id.lv_materias) ListView localListview;
     public void setLocalListView(ListView searchListView) {
         this.localListview = searchListView;
     }
 
-    FirebaseHolder instancia = new FirebaseHolder();
+    FirebaseHolder instance = new FirebaseHolder();
 
 
     public ListView getSearchListView(Context context, View view) {
         ButterKnife.bind(this, view);
-        adaptador = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
-        localListview.setAdapter(adaptador);
+        adaptor = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
+        localListview.setAdapter(adaptor);
 
-        instancia.getMateria().addValueEventListener(new ValueEventListener() {
+        instance.getMateria().addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    adaptador.add(snapshot.getValue(String.class));
+                    adaptor.add(snapshot.getValue(String.class));
                 }
             }
             @Override

@@ -33,22 +33,18 @@ public class UserDetailView extends AppCompatActivity {
         TextView tv_email = (TextView) this.findViewById(R.id.tv_email);
         TextView tv_resources = (TextView) this.findViewById(R.id.tv_resources);
         ImageView aviavble = (ImageView) this.findViewById(R.id.led_disp);
-        System.out.println(extras.get("email").toString());
-
-
 
         tv_phone.setText(extras.get("phone").toString());
-        System.out.println("nombre phone:"+extras.get("phone").toString());
+        //System.out.println("nombre phone:"+extras.get("phone").toString());
         tv_email.setText(extras.get("email").toString());
-        System.out.println("nombre email:"+extras.get("email").toString());
+        //System.out.println("nombre email:"+extras.get("email").toString());
         tv_resources.setText(extras.get("resources").toString());
-        System.out.println("nombre resources: "+extras.get("resources").toString());
+        //System.out.println("nombre resources: "+extras.get("resources").toString());
         tv_UserName.setText(extras.get("name").toString());
-        System.out.println("nombre extra:"+extras.get("name").toString());
+        //System.out.println("nombre extra:"+extras.get("name").toString());
         Picasso.get().load(extras.get("photo").toString()).into(iv_asesor);
         aviavble.setVisibility(View.INVISIBLE);
         if(extras.get("aviable").equals("true")){
-            System.out.println("#############View is true");
             aviavble.setVisibility(View.VISIBLE);
         }
 

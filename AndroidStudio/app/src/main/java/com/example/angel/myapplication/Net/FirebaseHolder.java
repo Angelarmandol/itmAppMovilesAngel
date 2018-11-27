@@ -38,6 +38,10 @@ public class FirebaseHolder {
 
     DatabaseReference materia = database.getReference("materia");
 
+    public DatabaseReference getDbRef() {
+        return dbRef;
+    }
+
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("alumno");
 
 

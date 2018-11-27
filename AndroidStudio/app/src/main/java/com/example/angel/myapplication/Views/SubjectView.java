@@ -22,7 +22,6 @@ public class SubjectView extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-
         localListview = new SubjectPresenter().getSearchListView(this, findViewById(android.R.id.content));
 
     }

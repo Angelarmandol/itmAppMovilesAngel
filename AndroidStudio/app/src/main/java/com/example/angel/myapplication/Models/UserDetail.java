@@ -4,17 +4,15 @@ import android.widget.ListView;
 
 public class UserDetail {
 
-    private String area_resources;
-    private String  tv_email;
-    private String fbUserName;
-    private  String tv_telephone;
-
-
-    private String link;
-
-    private ListView lv_materias;
+    public String area_resources;
+    public String  tv_email;
+    public String fbUserName;
+    public  String tv_telephone;
+    public String link;
     boolean zaviable;
     int score;
+    private ListView lv_materias;
+
 
     public UserDetail(String name, String telephone, String email, String areaResources, String url, int score, boolean aviable) {
         this.fbUserName=name;
