@@ -30,7 +30,7 @@ import butterknife.OnClick;
 
 public class FacebookLoginView extends AppCompatActivity {
 
-    private TextView info;
+
     private CallbackManager callbackManager;
     private LoginButton loginButton;
 
@@ -58,22 +58,13 @@ public class FacebookLoginView extends AppCompatActivity {
         final TextView info = findViewById(R.id.fbid);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
-
-
-
         callbackManager = CallbackManager.Factory.create();
-
-
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        // App code
-                        System.out.println("---------login exitoso");
-                        Log.d("0o0o0o0o", "Success !");
                         AccessToken tok;
                         tok = AccessToken.getCurrentAccessToken();
-                        Log.d("0o0o0o0", tok.getUserId());
                         info.setText("Login exitoso");
                         Toast toast4 =
                                 Toast.makeText(getApplicationContext(), "Login exitoso", Toast.LENGTH_SHORT);
@@ -86,12 +77,15 @@ public class FacebookLoginView extends AppCompatActivity {
                     @Override
                     public void onCancel() {
                         // App code
-                        System.out.println("---------login cancelado");
+                        Toast toast4 =
+                                Toast.makeText(getApplicationContext(), "Login Cancelado", Toast.LENGTH_SHORT);
+                        toast4.show();
                     }
                     @Override
                     public void onError(FacebookException exception) {
-                        // App code
-                        System.out.println("-------Error de conexion");
+                        Toast toast4 =
+                                Toast.makeText(getApplicationContext(), "Error de Login", Toast.LENGTH_SHORT);
+                        toast4.show();
                     }
 
                 });
@@ -100,11 +94,9 @@ public class FacebookLoginView extends AppCompatActivity {
         if(isLoggedIn){
             sw.setChecked(false);
             sw.setVisibility(View.VISIBLE);
-            System.out.println("+-+-+-+-+-+-login");
         }else{
             sw.setVisibility(View.INVISIBLE);
             greenLigth.setVisibility(View.INVISIBLE);
-            System.out.println("-++++++++++++++++logout");
         }
     }
 
@@ -117,14 +109,11 @@ public class FacebookLoginView extends AppCompatActivity {
 
     @OnClick(R.id.sw_aviable)
     public void setDisponible(){
-        Log.i("-*-*-*-", " se preciono sw");
         if (sw.isChecked()) {
             greenLigth.setVisibility(View.VISIBLE);
-            Log.i("-*-*-*-", " activado");
             user.setAviable();
         }else{
             greenLigth.setVisibility(View.INVISIBLE);
-            Log.i("-*-*-*-", " desactivado");
             user.setUnaviable();
         }
 

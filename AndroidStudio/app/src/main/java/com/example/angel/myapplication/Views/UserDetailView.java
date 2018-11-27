@@ -63,7 +63,6 @@ public class UserDetailView extends AppCompatActivity {
         if(score>=1){
             s1.setVisibility(View.VISIBLE);
         }
-
         if(score>=2){
             s2.setVisibility(View.VISIBLE);
         }

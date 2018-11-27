@@ -2,21 +2,17 @@ package com.example.angel.myapplication.Views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.angel.myapplication.Net.MateriaPresenter;
-import com.example.angel.myapplication.Net.LocalTEST;
+import com.example.angel.myapplication.Net.SubjectPresenter;
 import com.example.angel.myapplication.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchView extends AppCompatActivity {
+public class SubjectView extends AppCompatActivity {
 
-      LocalTEST test;
-      ArrayAdapter<String> adaptador;
-      MateriaPresenter test2 = new MateriaPresenter();
+
 
     @BindView(R.id.lv_materias) ListView localListview;
 
@@ -27,7 +23,7 @@ public class SearchView extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        localListview = new MateriaPresenter().getSearchListView(this, findViewById(android.R.id.content));
+        localListview = new SubjectPresenter().getSearchListView(this, findViewById(android.R.id.content));
 
     }
 }

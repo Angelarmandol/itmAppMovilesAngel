@@ -1,6 +1,5 @@
 package com.example.angel.myapplication.Net;
 
-import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,6 +38,7 @@ public class FirebaseHolder {
 
     DatabaseReference materia = database.getReference("materia");
 
+    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("alumno");
 
 
 
