@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 
-public class Materia {
+public class Subject {
 
     public String nameMateria;
     public String id_Materia;
