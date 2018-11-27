@@ -27,6 +27,7 @@ import com.example.angel.myapplication.Net.FireBaseInstances;
 import com.example.angel.myapplication.Net.LocalTEST;
 import com.example.angel.myapplication.Net.UserNet;
 import com.example.angel.myapplication.Views.AseoresView;
+import com.example.angel.myapplication.Views.FacebookLoginView;
 import com.example.angel.myapplication.Views.SearchView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -110,24 +111,14 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-/*
-            Intent settingsActivityIntent = new Intent(getApplicationContext(), SettingsActivity.class);
-            startActivity(settingsActivityIntent);
-*/
+            Intent facebookLoginActivityIntent = new Intent(getApplicationContext(), FacebookLoginView.class);
+            startActivity(facebookLoginActivityIntent);
             return true;
         }
-/*
-        Toast toast4 =
-                Toast.makeText(getApplicationContext(), "Activity Config", Toast.LENGTH_SHORT);
-        toast4.show();
-*/
         return super.onOptionsItemSelected(item);
     }
 
@@ -139,40 +130,21 @@ public class MainActivityDesarrolloAcademico extends AppCompatActivity
         Toast toast2 =
                 Toast.makeText(getApplicationContext(), "Selected: "+item.getItemId(), Toast.LENGTH_SHORT);
         toast2.show();
-        if (id == R.id.nav_config) {
-
-            Toast toast3 =
-                    Toast.makeText(getApplicationContext(), "Activity Config", Toast.LENGTH_SHORT);
-            toast3.show();
-
-
-            Intent settingsActivityIntent = new Intent(getApplicationContext(), SettingsActivity.class);
-            startActivity(settingsActivityIntent);
-
-        }
-
         if (id == R.id.item_search) {
-
             Toast toast4 =
                     Toast.makeText(getApplicationContext(), "Activity MateriaPresenter", Toast.LENGTH_SHORT);
             toast4.show();
-
-
             Intent searchActivityIntent = new Intent(getApplicationContext(), SearchView.class);
             startActivity(searchActivityIntent);
-
         }
 
         if (id == R.id.item_asesores) {
 
             Toast toast4 =
-                    Toast.makeText(getApplicationContext(), "Activity MateriaPresenter", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "Activity AsesoresPresenter", Toast.LENGTH_SHORT);
             toast4.show();
-
-
             Intent searchActivityIntent = new Intent(getApplicationContext(), AseoresView.class);
             startActivity(searchActivityIntent);
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

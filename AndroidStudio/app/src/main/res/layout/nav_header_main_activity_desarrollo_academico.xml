@@ -14,8 +14,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="131dp"
-        android:layout_height="98dp"
+        android:layout_width="112dp"
+        android:layout_height="81dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/llave" />
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text='"Desarrollo Academico'
+        android:text="Desarrollo Academico"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView

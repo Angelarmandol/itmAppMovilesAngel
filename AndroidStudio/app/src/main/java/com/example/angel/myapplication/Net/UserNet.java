@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.angel.myapplication.Models.UserDetail;
 import com.example.angel.myapplication.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,12 +36,19 @@ public class UserNet {
     ArrayList<ArrayList> detailUsers= new ArrayList<ArrayList>();
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("alumno");
 
-    public void subir(){
+    public void setAviable(){
 
+        UserDetail user = new UserDetail("Test", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5, true);
 
-      // UserDetail user = new UserDetail("Elma Rovers", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5);
+      dbRef.child("ki87654d").setValue(user);
 
-      //  dbRef.child("ki87654d").setValue(user);
+    }
+
+    public void setUnaviable(){
+
+        UserDetail user = new UserDetail("Test", "(825)-172-7102", "elma.rovers@example.com", "aac41f269050ceddeecbd1ace2d", "https://randomuser.me/api/portraits/med/women/56.jpg", 5, false);
+
+        dbRef.child("ki87654d").setValue(user);
 
     }
 
@@ -190,6 +198,20 @@ String text;
             tv_email=tv_email[1].split(", ");
             System.out.println("valor de tv_email:"+tv_email[0]);
             datos.add(6,tv_email[0]);
+
+            System.out.println("**********");
+
+                String[] img_aviable = users[x].split("zaviable=");
+
+                if(img_aviable[0].length()<50){
+
+                img_aviable=img_aviable[1].split(", ");
+                System.out.println("valor de zaviable:"+img_aviable[0]);
+                datos.add(7,img_aviable[0]);
+
+                }else {
+                    System.out.println("no soy shoo");
+                }
             System.out.println("..............................................................");
             detailUsers.add(iteraror,datos);
             iteraror++;

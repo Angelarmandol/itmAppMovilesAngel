@@ -32,7 +32,7 @@ public class UserDetailView extends AppCompatActivity {
         TextView tv_phone = (TextView) this.findViewById(R.id.tv_phone);
         TextView tv_email = (TextView) this.findViewById(R.id.tv_email);
         TextView tv_resources = (TextView) this.findViewById(R.id.tv_resources);
-
+        ImageView aviavble = (ImageView) this.findViewById(R.id.led_disp);
         System.out.println(extras.get("email").toString());
 
 
@@ -46,7 +46,11 @@ public class UserDetailView extends AppCompatActivity {
         tv_UserName.setText(extras.get("name").toString());
         System.out.println("nombre extra:"+extras.get("name").toString());
         Picasso.get().load(extras.get("photo").toString()).into(iv_asesor);
-
+        aviavble.setVisibility(View.INVISIBLE);
+        if(extras.get("aviable").equals("true")){
+            System.out.println("#############View is true");
+            aviavble.setVisibility(View.VISIBLE);
+        }
 
         int score=Integer.parseInt(extras.get("score").toString());
         ImageView s1 = (ImageView) this.findViewById(R.id.s1);

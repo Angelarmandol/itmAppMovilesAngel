@@ -13,18 +13,19 @@ public class UserDetail {
     private String link;
 
     private ListView lv_materias;
-
+    boolean zaviable;
     int score;
-/*
-    public UserDetail(String name, String telephone, String email, String areaResources, String url, int score) {
+
+    public UserDetail(String name, String telephone, String email, String areaResources, String url, int score, boolean aviable) {
         this.fbUserName=name;
         this.tv_telephone=telephone;
         this.tv_email=email;
         this.area_resources=areaResources;
         this.link=url;
         this.score=score;
+        this.zaviable=aviable;
     }
-*/
+
     public String getLink() {
         return link;
     }
