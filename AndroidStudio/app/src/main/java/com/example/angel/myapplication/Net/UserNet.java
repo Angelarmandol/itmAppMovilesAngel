@@ -41,8 +41,6 @@ public class UserNet {
         this.adaptador = adaptador;
     }
 
-
-
     ArrayList localArrayList = new ArrayList();
 
     public void setLocalListView(ListView searchListView) {
