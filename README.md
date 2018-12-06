@@ -25,6 +25,8 @@ El objetivó de la aplicación es proveer a toda la comunidad estudiantil de inf
 
 Debido a las quejas presentadas por los alumnos hacia el departamento de desarrollo académico, se han buscado estrategias de difusión de información para la correcta implementación del programa. Como gran parte de los alumnos posee un Smartphone, una buena manera de hacer llevar esta información es a través de una aplicación móvil.
 
+El patrón Model View Presenter es un patrón arquitectónico basado en el patrón Model View Controller (MVC) que aumenta la separación de las preocupaciones y facilita las pruebas unitarias. Crea tres capas, Model, View y Presenter, cada una con una responsabilidad bien definida.
+
 ## Ventajas frente al sistema actual.
 
  - Presentación ágil de la información. 

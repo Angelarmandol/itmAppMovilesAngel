@@ -54,7 +54,8 @@ public class FacebookLoginView extends AppCompatActivity {
         setContentView(R.layout.activity_facebook_avt);
         ButterKnife.bind(this);
 
-        sw.setChecked(false);
+
+        setDisponible();
         final TextView info = findViewById(R.id.fbid);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
@@ -109,6 +110,9 @@ public class FacebookLoginView extends AppCompatActivity {
 
     @OnClick(R.id.sw_aviable)
     public void setDisponible(){
+
+
+
         if (sw.isChecked()) {
             greenLigth.setVisibility(View.VISIBLE);
             user.setAviable();
