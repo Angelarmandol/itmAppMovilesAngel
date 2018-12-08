@@ -213,6 +213,7 @@ public class MainActivityDesarrolloAcademicoTest {
                                         0),
                                 2),
                         isDisplayed()));
+//
 //        switch_.perform(click());
         try {
             Thread.sleep(7000);
